@@ -1,0 +1,44 @@
+# Site settings
+title: Nulledgeable
+description: Software development blog featuring posts, lessons, business essays, and projects
+url: "https://nulledgeable.github.io"
+baseurl: ""
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+
+# Exclude from processing
+exclude:
+  - README.md
+  - LICENSE.txt
+  - .editorconfig
+  - .gitignore
+  - node_modules
+  - vendor
+
+# Include files
+include:
+  - .htaccess
+  - _pages
+
+# Collections
+collections:
+  pages:
+    output: true
+    permalink: /:name
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+
+# Theme
+theme: null
+
+# Plugins
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
