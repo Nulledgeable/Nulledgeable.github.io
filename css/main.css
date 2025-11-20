@@ -57,7 +57,7 @@ body {
 }
 
 .hamburger {
-    display: none;
+    display: flex;
     flex-direction: column;
     background: none;
     border: none;
@@ -339,6 +339,45 @@ body {
     opacity: 1;
 }
 
+/* Hamburger Menu - Always visible */
+.wiki-nav {
+    position: fixed;
+    top: 0;
+    right: -280px;
+    width: 280px;
+    height: 100vh;
+    background: linear-gradient(to bottom, var(--purple-primary), var(--purple-dark));
+    flex-direction: column;
+    gap: 0;
+    padding: 4rem 0 2rem 0;
+    transition: right 0.3s ease;
+    z-index: 999;
+    overflow-y: auto;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.wiki-nav.active {
+    right: 0;
+}
+
+.wiki-nav a {
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    text-align: left;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    transition: all 0.3s;
+}
+
+.wiki-nav a:hover {
+    background: rgba(212, 175, 55, 0.15);
+    border-left: 4px solid var(--gold);
+    color: var(--gold);
+    padding-left: 1.75rem;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .wiki-header {
@@ -351,48 +390,6 @@ body {
     
     .site-title {
         font-size: 1.5rem;
-    }
-    
-    .hamburger {
-        display: flex;
-        z-index: 1000;
-    }
-    
-    .wiki-nav {
-        position: fixed;
-        top: 0;
-        right: -280px;
-        width: 280px;
-        height: 100vh;
-        background: linear-gradient(to bottom, var(--purple-primary), var(--purple-dark));
-        flex-direction: column;
-        gap: 0;
-        padding: 4rem 0 2rem 0;
-        transition: right 0.3s ease;
-        z-index: 999;
-        overflow-y: auto;
-        box-shadow: -2px 0 10px rgba(0, 0, 0, 0.3);
-    }
-    
-    .wiki-nav.active {
-        right: 0;
-    }
-    
-    .wiki-nav a {
-        background: transparent;
-        border: none;
-        border-radius: 0;
-        padding: 1rem 2rem;
-        font-size: 1.1rem;
-        text-align: left;
-        border-bottom: 2px solid transparent;
-        transition: all 0.3s;
-    }
-    
-    .wiki-nav a:hover {
-        background: rgba(212, 175, 55, 0.1);
-        border-bottom-color: var(--gold);
-        color: var(--gold);
     }
     
     .wiki-content {
