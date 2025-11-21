@@ -1,12 +1,12 @@
 // Data
 const posts = [
     {
-        id: 1,
-        title: "Understanding JavaScript Closures",
-        excerpt: "Deep dive into one of JavaScript's most powerful features and how to use closures effectively in your code.",
-        tag: "JavaScript",
-        date: "Nov 16, 2025",
-        readTime: "5 min"
+        id: 'programming-lessons-1',
+        title: "Pervasive Patterns In Programming: Iterations, Recursion, and Algorithms",
+        excerpt: "Recursions are used in everything from data structures and algorithms to functions and classes.",
+        tag: "Pervasive Patterns",
+        date: "Nov 21, 2025",
+        readTime: "10 min"
     },
     {
         id: 2,
@@ -72,7 +72,7 @@ function renderRecentArticle() {
             ${recent.date} • ${recent.readTime} read
         </div>
         <p class="excerpt">${recent.excerpt}</p>
-        <a href="#" class="read-more">Read Full Article →</a>
+        <a href="article.html?id=${recent.id}" class="read-more">Read Full Article →</a>
     `;
 }
 
@@ -91,7 +91,13 @@ function renderPosts() {
             </div>
             <p>${post.excerpt}</p>
         `;
-        div.onclick = () => alert(`Opening: ${post.title}`);
+        div.onclick = () => {
+            if (post.id) {
+                window.location.href = `article.html?id=${post.id}`;
+            } else {
+                alert(`Article coming soon: ${post.title}`);
+            }
+        };
         container.appendChild(div);
     });
 }
